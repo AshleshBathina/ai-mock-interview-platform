@@ -50,16 +50,28 @@ ai-mock-interview-platform/
 ├── client/                   # React frontend
 │   ├── src/
 │   │   ├── pages/
-│   │   │   ├── LoginPage/        # Login & signup
-│   │   │   ├── HomePage/         # Dashboard with recent interviews
+│   │   │   ├── LoginPage/          # Login & signup
+│   │   │   ├── HomePage/           # Dashboard with recent interviews
 │   │   │   ├── InterviewSetupPage/ # Role selection & resume upload
-│   │   │   ├── InterviewPage/    # Live interview interface
-│   │   │   ├── FeedbackPage/     # Post-interview feedback report
-│   │   │   └── HistoryPage/      # All past interviews
-│   │   ├── components/           # Shared UI components (Navbar, ProtectedRoute, etc.)
-│   │   ├── services/             # Axios API service functions
-│   │   ├── context/              # React context (auth state)
-│   │   └── constants/            # App-wide constants
+│   │   │   ├── InterviewPage/      # Live interview interface
+│   │   │   ├── FeedbackPage/       # Post-interview feedback report
+│   │   │   └── HistoryPage/        # All past interviews
+│   │   ├── components/
+│   │   │   ├── AudioPlayer/        # Plays Natalie's TTS audio responses
+│   │   │   ├── CodeEditor/         # Monaco Editor wrapper for coding questions
+│   │   │   ├── ConversationalMic/  # Mic UI for voice-based answers
+│   │   │   ├── InterviewCard/      # Interview summary card for history
+│   │   │   ├── Navbar/             # Top navigation bar
+│   │   │   ├── ProtectedRoute/     # Auth guard for protected routes
+│   │   │   ├── ScoreCard/          # Displays per-category feedback scores
+│   │   │   └── VoiceRecorder/      # Audio recording & submission
+│   │   ├── services/               # Axios API service functions
+│   │   │   ├── api.js              # Axios instance & interceptors
+│   │   │   ├── authService.js      # Register / login calls
+│   │   │   ├── historyService.js   # Fetch interview history
+│   │   │   └── interviewService.js # Start, answer, feedback calls
+│   │   ├── context/                # React context (auth state)
+│   │   └── constants/              # App-wide constants
 │   ├── index.html
 │   └── vite.config.js
 │
@@ -73,13 +85,21 @@ ai-mock-interview-platform/
         │   ├── auth.routes.js      # POST /api/auth/register, /login
         │   ├── resume.routes.js    # POST /api/resume/upload, GET /api/resume
         │   ├── interview.routes.js # POST /api/interview/start, /answer, /feedback
-        │   ├── history.routes.js   # GET /api/history
-        │   └── index.js           # Route aggregator
+        │   ├── history.routes.js   # GET /api/history, GET /api/history/:id
+        │   └── index.js            # Route aggregator
         ├── controllers/      # Request handlers
         ├── models/
         │   ├── User.model.js
+        │   ├── Resume.model.js
         │   └── Interview.model.js
         ├── services/         # AI integrations (Gemini, AssemblyAI, Murf)
+        │   ├── assemblyai.service.js
+        │   ├── auth.service.js
+        │   ├── gemini.service.js
+        │   ├── history.service.js
+        │   ├── interview.service.js
+        │   ├── murf.service.js
+        │   └── resume.service.js
         ├── middleware/       # Auth, error handling, file upload
         ├── constants/
         │   └── prompts.js    # All Gemini prompts
@@ -163,7 +183,7 @@ The app runs on `http://localhost:5173`.
 
 ## 🔌 API Reference
 
-All routes are prefixed with `/api`. Protected routes require a `Authorization: Bearer <token>` header.
+All routes are prefixed with `/api`. Protected routes require an `Authorization: Bearer <token>` header.
 
 ### Auth `/api/auth`
 | Method | Endpoint | Description |
