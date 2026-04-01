@@ -73,14 +73,6 @@ function HistoryPage() {
     }
   };
 
-  // TODO: Add useEffect to load paginated history using getHistory
-
-  // TODO: Implement handleDelete - delete interview and update state
-
-  // TODO: Implement handleClearAll - clear all history with confirmation
-
-  // TODO: Implement handleCardClick - navigate based on interview status
-
   return (
     <div className="history-page">
       <div className="history-container">
