@@ -20,11 +20,6 @@ function HomePage() {
   const [allInterviews, setAllInterviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // TODO: Add useEffect to load interview history on mount using getHistory
-
-  // TODO: Implement handleDelete - delete interview and update state
-
-  // TODO: Implement handleCardClick - navigate based on interview status
 
   useEffect(() => {
     const loadHistory = async () => {
