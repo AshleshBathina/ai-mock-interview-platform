@@ -156,16 +156,6 @@ function InterviewSetupPage() {
     setStep((prev) => Math.max(prev - 1, 1));
   };
 
-  // TODO: Add useEffect to load saved resume on mount using getResume
-
-  // TODO: Implement handleResumeUpload - validate PDF, upload file, update state
-
-  // TODO: Implement handleStartInterview - validate inputs, call startInterview, navigate
-
-  // TODO: Implement handleNext - validate current step and advance
-
-  // TODO: Implement handleBack - go to previous step
-
   if (loading) {
     return (
       <div className="setup-page">
