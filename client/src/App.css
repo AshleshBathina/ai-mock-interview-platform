@@ -1,14 +1,5 @@
-/* ============================================
-   App.css - Global Styles (Ocean Blue Palette)
-   ============================================
-   Skills-compliant: No CSS variables, no animations,
-   no transitions, no transforms, no pseudo-classes.
-   Reference: reference-frontend.md (CSS properties)
-   ============================================ */
-
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
 
-/* Reset (skills-compliant) */
 * {
   margin: 0;
   padding: 0;
@@ -41,10 +32,6 @@ select {
   outline: none;
 }
 
-/* ============================================
-   Shared Button Classes
-   Reference: ui-patterns.md (Button Patterns)
-   ============================================ */
 .btn-primary {
   background-color: #2563eb;
   color: #ffffff;
@@ -114,10 +101,6 @@ select {
   cursor: not-allowed;
 }
 
-/* ============================================
-   Shared Badge Classes
-   Reference: text-highlight-patterns.md (Method 4)
-   ============================================ */
 .badge {
   background-color: #dbeafe;
   color: #1d4ed8;
@@ -144,10 +127,6 @@ select {
   color: #dc2626;
 }
 
-/* ============================================
-   Shared Callout Classes
-   Reference: text-highlight-patterns.md (Method 5)
-   ============================================ */
 .callout {
   border-style: solid;
   border-width: 0px;
