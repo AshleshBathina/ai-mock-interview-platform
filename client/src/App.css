@@ -157,10 +157,6 @@ select {
   background-color: #ecfeff;
 }
 
-/* ============================================
-   Shared Form Classes
-   Reference: ui-patterns.md (Form Design)
-   ============================================ */
 .form-group {
   display: flex;
   flex-direction: column;
