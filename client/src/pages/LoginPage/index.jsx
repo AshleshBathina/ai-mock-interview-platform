@@ -1,12 +1,3 @@
-// ============================================
-// LoginPage - Landing-Page Style Auth
-// ============================================
-// Top hero banner with value prop + features,
-// form card below. Inspired by Pramp/Interviewing.io.
-// Reference: useState, useContext, useNavigate - reference-react.md
-// Reference: React Icons - reference-react.md
-// ============================================
-
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext.jsx';
@@ -172,8 +163,8 @@ function LoginPage() {
               {loading
                 ? 'Please wait...'
                 : isSignUp
-                ? 'Create Account'
-                : 'Sign In'}
+                  ? 'Create Account'
+                  : 'Sign In'}
             </button>
           </form>
         </div>
