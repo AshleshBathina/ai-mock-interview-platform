@@ -1,11 +1,3 @@
-// ============================================
-// api.js - Axios Instance with Auth Interceptor
-// ============================================
-// Creates a reusable Axios instance that auto-attaches
-// the JWT token to every request.
-// Reference: axios.create(), interceptors - reference-javascript.md
-// ============================================
-
 import axios from 'axios';
 
 const API = axios.create({
