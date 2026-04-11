@@ -1,17 +1,3 @@
-// ============================================
-// auth.middleware.js - Authentication Middleware
-// ============================================
-// Protects routes that require login.
-// Checks if the request has a valid JWT token.
-//
-// How it works:
-// 1. Frontend sends: Authorization: Bearer <token>
-// 2. This middleware extracts and verifies the token
-// 3. If valid → attaches user to req.user, moves on
-// 4. If invalid → sends error, stops the request
-// Reference: Middleware, req.headers - reference-backend.md
-// ============================================
-
 import { verifyToken } from '../utils/jwt.utils.js';
 import User from '../models/User.model.js';
 
