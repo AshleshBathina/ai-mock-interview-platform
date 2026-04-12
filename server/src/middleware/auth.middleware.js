@@ -20,7 +20,6 @@ const authenticate = async (req, res, next) => {
     // Verify the token and decode it
     const decoded = verifyToken(token);
 
-    // Find the user in the database (exclude password for security)
     const user = await User.findById(decoded.id).select('-password');
 
     if (!user) {
