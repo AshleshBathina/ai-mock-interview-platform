@@ -29,7 +29,7 @@ const authenticate = async (req, res, next) => {
       });
     }
 
-    // Attach user to request — now all route handlers can use req.user
+
     req.user = user;
     next();
   } catch (error) {
