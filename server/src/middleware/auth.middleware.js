@@ -17,7 +17,7 @@ const authenticate = async (req, res, next) => {
 
     const token = authHeader.split(' ')[1];
 
-    // Verify the token and decode it
+
     const decoded = verifyToken(token);
 
     const user = await User.findById(decoded.id).select('-password');
