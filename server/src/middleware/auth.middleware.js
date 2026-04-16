@@ -3,7 +3,6 @@ import User from '../models/User.model.js';
 
 const authenticate = async (req, res, next) => {
   try {
-    // Get the Authorization header
     const authHeader = req.headers.authorization;
 
     // Check if token exists
